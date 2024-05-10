@@ -1,0 +1,10 @@
+{
+  "Umbraco": {
+    "uConfig": {
+      "Selected": [ "^ConnectionStrings", "^Umbraco" ],
+      "Excluded": [ "^Umbraco:uConfig" ],
+      "Readonly": [ "^ConnectionStrings" ],
+      "Protected": [ "^ConnectionStrings", "Password$" ]
+    }
+  }
+}
