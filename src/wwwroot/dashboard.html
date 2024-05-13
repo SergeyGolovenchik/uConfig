@@ -1,0 +1,56 @@
+﻿<div class="uconfig" ng-controller="uConfig.DashboardController as uConfig">
+    <uui-modal-container>
+        <uui-modal-dialog id="editor" ng-if="uConfig.editorOpened">
+            <uui-dialog-layout>
+                <h3 class="title"><localize key="uConfig_editorTitle">Value Editor</localize></h3>
+
+                <div class="input-group">
+                    <uui-label><localize key="uConfig_keyKeyword">Key</localize></uui-label>
+                    <input class="key {{uConfig.editorKeyClass}}" type="text" ng-model="uConfig.editorKey" ng-disabled="uConfig.editorKeyDisabled" placeholder="{{uConfig.editorKeyPlaceholder}}" ng-change="uConfig.test()" />
+                    <uui-icon class="test-result" name="{{uConfig.editorTestResult}}"></uui-icon>
+                </div>
+                <div class="input-group">
+                    <uui-label><localize key="uConfig_valueKeyword">Value</localize></uui-label>
+                    <input class="value" type="{{uConfig.editorValueProtected ? 'password' : 'text'}}" ng-model="uConfig.editorValue" ng-change="uConfig.editorValueChange()" placeholder="{{uConfig.editorValuePlaceholder}}" ng-disabled="uConfig.editorValueDisabled" title="{{uConfig.editorAlertText}}" />
+                </div>
+
+                <uui-button ng-click="uConfig.deleteEditor($event)" ng-if="uConfig.isControlled(uConfig.editorKey)" slot="actions" color="danger" label="Delete">
+                    <localize key="uConfig_deleteBtnText">Delete</localize>
+                </uui-button>
+                <uui-button ng-click="uConfig.closeEditor()" slot="actions" color="default" label="Cancel">
+                    <localize key="uConfig_closeBtnText">Cancel</localize>
+                </uui-button>
+                <uui-button ng-click="uConfig.updateEditor($event)" ng-disabled="!uConfig.editorValueChanged" title="{{uConfig.editorAlertText}}" slot="actions" look="primary" color="default" label="Update">
+                    <localize ng-if="!uConfig.isControlled(uConfig.editorKey)" key="uConfig_overwriteBtnText">Overwrite</localize>
+                    <localize ng-if="uConfig.isControlled(uConfig.editorKey)" key="uConfig_updateBtnText">Update</localize>
+                </uui-button>
+            </uui-dialog-layout>
+        </uui-modal-dialog>
+    </uui-modal-container>
+
+    <uui-box class="box">
+        <h4 id="headline" slot="headline">
+            <localize key="uConfig_headline">Server Configuration</localize>
+        </h4>
+
+        <uui-scroll-container>
+            <uui-table ng-if="uConfig.configurationLoaded">
+                <uui-table-column></uui-table-column>
+                <uui-table-column></uui-table-column>
+
+                <uui-table-row ng-repeat="kvp in uConfig.configuration"
+                               ng-class="{'disabled': uConfig.isEditingDisabled(kvp.key)}"
+                               ng-click="uConfig.edit(kvp)">
+                    <uui-table-cell class="key">{{kvp.key}}</uui-table-cell>
+                    <uui-table-cell class="data">
+                        <p class="value">{{kvp.displayValue}}</p>
+                        <p class="provider"><localize key="uConfig_fromKeyword">From</localize> {{kvp.providerName}}</p>
+                </uui-table-row>
+            </uui-table>
+            <uui-loader-bar ng-if="!uConfig.configurationLoaded" animationDuration="3"></uui-loader-bar>
+        </uui-scroll-container>
+    </uui-box>
+
+    <div id="copyright"></div>
+    <uui-toast-notification-container id="notifications" auto-close="5000" bottom-up />
+</div>

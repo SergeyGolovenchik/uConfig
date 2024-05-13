@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<StaticWebAssetBasePath>App_Plugins/uConfig</StaticWebAssetBasePath>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<Company>Falcon Technologies</Company>
+		<Authors>Sergey Golovenchik</Authors>
+		<PackageId>uConfig</PackageId>
+		<Product>uConfig</Product>
+		<Title>uConfig</Title>
+		<Description>Server configuration viewer and editor for Umbraco CMS with embedded SqlConfigurationProvider</Description>
+		<PackageTags>umbraco plugin package umbraco-marketplace umbraco-13</PackageTags>
+		<Version>$(AssemblyVersion)</Version>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+		<PackageProjectUrl>https://www.falcons.tech/products/uconfig</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SergeyGolovenchik/uConfig</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>$(Product) v.$(AssemblyVersion) by $(Company)</Copyright>
+		<PackageIcon>package-icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../RELEASE-NOTES.md"))</PackageReleaseNotes>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.*" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.*" />
+		<PackageReference Include="Umbraco.Cms.Persistence.EFCore" Version="13.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="uConfigSettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</Content>
+		<Content Update="wwwroot\dashboard.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\lang\en-US.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\package.manifest">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\uconfig.controller.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\uconfig.service.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\uconfig.styles.css">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<None Include="..\LICENSE" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\RELEASE-NOTES.md" Pack="true" PackagePath="\" />
+		<None Include="..\assets\package-icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

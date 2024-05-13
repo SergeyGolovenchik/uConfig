@@ -1,0 +1,106 @@
+﻿.uconfig {
+    line-height: 1;
+}
+
+.uconfig .box {
+    --uui-box-default-padding: 0;
+}
+
+.uconfig .disabled {
+    color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Table styles */
+.uconfig uui-table-row:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.uconfig uui-table uui-table-cell {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    white-space: nowrap;
+}
+
+.uconfig uui-table uui-table-cell.key {
+    font-weight: bold;
+}
+
+.uconfig uui-table uui-table-cell.data {
+    width: 100%;
+}
+
+    .uconfig uui-table uui-table-cell.data .value {
+        margin: 5px 0;
+    }
+
+    .uconfig uui-table uui-table-cell.data .provider {
+        font-size: 0.5rem;
+        margin: 5px 0;
+    }
+
+/* Value Editor styles */
+.uconfig #editor uui-dialog-layout {
+    width: 330px;
+    padding: 25px;
+}
+
+.uconfig #editor .title {
+    margin-top: 0;
+}
+
+.uconfig #editor .input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.uconfig #editor .input-group .test-result {
+    position: absolute;
+    display: none;
+    cursor: help;
+    bottom: 7px;
+    right: 7px;
+}
+
+.uconfig #editor .input-group uui-label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.uconfig #editor .input-group input {
+    width: 100%;
+    display: block;
+}
+
+.uconfig #editor .input-group input.key[disabled] {
+    cursor: default;
+}
+
+/* Notifications */
+.uconfig uui-toast-notification-container {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 0 25px 0;
+}
+
+.uconfig uui-toast-notification-container uui-toast-notification-layout .key {
+    user-select: all;
+    font-weight: bold;
+    word-break: break-word;
+    cursor: pointer;
+}
+
+.uconfig uui-toast-notification-container uui-toast-notification-layout .key span {
+    white-space: nowrap;
+}
+
+/* Copyright */
+#copyright {
+    font-size: 8px;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-align: right;
+}

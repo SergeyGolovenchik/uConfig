@@ -1,0 +1,23 @@
+{
+  "id": "uConfig",
+  "name": "uConfig",
+  "allowPackageTelemetry": true,
+  "dashboards": [
+    {
+      "alias": "uConfig",
+      "view": "/App_Plugins/uConfig/dashboard.html",
+      "sections": [ "settings" ],
+      "weight": 11,
+      "access": [
+        { "grant": "admin" }
+      ]
+    }
+  ],
+  "css": [
+    "~/App_Plugins/uConfig/uconfig.styles.css"
+  ],
+  "javascript": [
+    "~/App_Plugins/uConfig/uconfig.controller.js",
+    "~/App_Plugins/uConfig/uconfig.service.js"
+  ]
+}

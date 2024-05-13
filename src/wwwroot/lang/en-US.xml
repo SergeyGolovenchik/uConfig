@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+	<creator>
+		<name>Sergey Golovenchik</name>
+		<link>https://falcons.tech/products/uconfig</link>
+	</creator>
+    <area alias="dashboardTabs">
+        <key alias="uConfig">Configuration</key>
+    </area>
+	<area alias="uConfig">
+		<key alias="headline">Server Configuration</key>
+		<key alias="editorTitle">Value Editor</key>
+		<key alias="fromKeyword">From</key>
+		<key alias="keyKeyword">Key</key>
+		<key alias="valueKeyword">Value</key>
+
+		<key alias="editorSuccessfullyAdded">Configuration key {key} was overwritten.<br/> New value is {value}.</key>
+		<key alias="editorSuccessfullyUpdated">Configuration key {key} was updated.<br/> New value is {value}.</key>
+		<key alias="editorSuccessfullyDeleted">Configuration key {key} was deleted.</key>
+		<key alias="editorSuccessfullyRolledBack">Configuration key {key} was deleted. <br/> Value was rolled back to {value}.</key>
+		
+		<key alias="editorImpossibleAlertMessage">This value was set in "{providerName}" provider that was added after uConfig, so it can't be overwritten.</key>
+		<key alias="editorReadonlyAlertMessage">This value was marked as 'Readonly' in uConfig settings, so, it's impossible to change it here.</key>
+
+		<key alias="closeBtnText">Close</key>
+		<key alias="deleteBtnText">Delete</key>
+		<key alias="updateBtnText">Update</key>
+		<key alias="overwriteBtnText">Overwrite</key>
+	</area>
+</language>
