@@ -5,7 +5,7 @@
 ## Overview
 uConfig is a plugin for Umbraco CMS that simplifies process of inspecting and managing server's configuration thru a dedicated backoffice dashboard. It features SQL configuration provider for Umbraco database seamlessly intregrated into ASP.NET core architecture by implementing IConfiguration interface and providing modification of configuration values in runtime. 
 
-![Preview](https://github.com/SergeyGolovenchik/uConfig/blob/main/assets/v1/dashboard.png?raw=true)
+![Preview](https://raw.github.com/SergeyGolovenchik/uConfig/main/assets/v1/dashboard.png)
 
 uConfig can be ideal choice under the following circumstances:
 
