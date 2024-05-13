@@ -19,12 +19,17 @@ public static class Extensions
 			return builder; // DB connection not found. May happen on the first run of an app.
 		}
 
-		switch (providerName)
+		if (providerName == Umbraco.Cms.Persistence.EFCore.Constants.ProviderNames.SQLLite || providerName == "System.Data.SQLite")
 		{
-			case Umbraco.Cms.Persistence.EFCore.Constants.ProviderNames.SQLLite: { return builder.AddUConfig(o => o.UseSqlite(connectionString)); }
-			case Umbraco.Cms.Persistence.EFCore.Constants.ProviderNames.SQLServer: { return builder.AddUConfig(o => o.UseSqlServer(connectionString)); }
-			default: { throw new NotSupportedException($"Db Provider {providerName} is not supported by this module."); }
+			return builder.AddUConfig(o => o.UseSqlite(connectionString));
 		}
+
+		if (providerName == Umbraco.Cms.Persistence.EFCore.Constants.ProviderNames.SQLServer || providerName == "System.Data.SqlClient")
+		{
+			return builder.AddUConfig(o => o.UseSqlServer(connectionString));
+		}
+
+		throw new NotSupportedException($"Db Provider {providerName} is not supported by this module.");
 	}
 
 	#region Private helpers

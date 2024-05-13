@@ -1,6 +1,6 @@
 # uConfig
 
-[![Release Notes](https://img.shields.io/badge/Version-1.0.1-red)](https://github.com/SergeyGolovenchik/uConfig/blob/main/RELEASE-NOTES.md) ![Umbraco](https://img.shields.io/badge/Umbraco-v13+-3544B1) [![License](https://img.shields.io/badge/License-MIT-darkgreen.svg)](https://github.com/SergeyGolovenchik/uConfig/blob/main/LICENSE)
+[![Release Notes](https://img.shields.io/badge/Version-1.0.2-red)](https://github.com/SergeyGolovenchik/uConfig/blob/main/RELEASE-NOTES.md) ![Umbraco](https://img.shields.io/badge/Umbraco-v13+-3544B1) [![License](https://img.shields.io/badge/License-MIT-darkgreen.svg)](https://github.com/SergeyGolovenchik/uConfig/blob/main/LICENSE)
 
 ## Overview
 uConfig is a plugin for Umbraco CMS that simplifies process of inspecting and managing server's configuration thru a dedicated backoffice dashboard. It features SQL configuration provider for Umbraco database seamlessly intregrated into ASP.NET core architecture by implementing IConfiguration interface and providing modification of configuration values in runtime. 
@@ -27,7 +27,7 @@ uConfig is available via Nuget, Umbraco Marketplace or GitHub Packages.
 To enable plugin all you need is to call `.AddUConfig()` extention method for your UmbracoBuilder from `uConfig` namespace: 
 
 ```csharp
-using uConfig;
+using uConfig; // <--Don't forget namespace
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +38,7 @@ builder.CreateUmbracoBuilder()
 	.AddComposers()
 	.Build();
 
-builder.AddUConfig();
+builder.AddUConfig(); // <--That's all you need!
 
 WebApplication app = builder.Build();
 ```
