@@ -1,6 +1,6 @@
 # uConfig
 
-[![Release Notes](https://img.shields.io/badge/Version-1.0.2-red)](https://github.com/SergeyGolovenchik/uConfig/blob/main/RELEASE-NOTES.md) ![Umbraco](https://img.shields.io/badge/Umbraco-v13+-3544B1) [![License](https://img.shields.io/badge/License-MIT-darkgreen.svg)](https://github.com/SergeyGolovenchik/uConfig/blob/main/LICENSE)
+[![Release Notes](https://img.shields.io/badge/Version-1.0.3-red)](https://github.com/SergeyGolovenchik/uConfig/blob/main/RELEASE-NOTES.md) ![Umbraco](https://img.shields.io/badge/Umbraco-v13+-3544B1) [![License](https://img.shields.io/badge/License-MIT-darkgreen.svg)](https://github.com/SergeyGolovenchik/uConfig/blob/main/LICENSE)
 
 ## Overview
 uConfig is a plugin for Umbraco CMS that simplifies process of inspecting and managing server's configuration thru a dedicated backoffice dashboard. It features SQL configuration provider for Umbraco database seamlessly intregrated into ASP.NET core architecture by implementing IConfiguration interface and providing modification of configuration values in runtime. 
@@ -43,7 +43,7 @@ builder.AddUConfig(); // <--That's all you need!
 WebApplication app = builder.Build();
 ```
 
-**Note**: uConfig employs the standard configuration system of .NET Core, which means that the sequence in which sources are added is crucial. It has the capability to overrider any values that were established prior to it. However, it cannot alter values that are appended subsequent to it (In such cases, the keys will be automatically marked as readonly, see below).
+**Note**: uConfig employs the standard configuration system of .NET Core, which means that the sequence in which sources are added is crucial. It has the capability to override any values that were established prior to it. However, it cannot alter values that are appended subsequent to it (In such cases, the keys will be automatically marked as readonly, see below).
 
 ### Configuration:
 uConfig ships with it's own configuration file `uConfigSettings.json` which should appear at your project's root after package installation. This file introduces `Umbraco:uConfig` configuration section with 4 sub-keys with default configuration that should cover most of scenarios:

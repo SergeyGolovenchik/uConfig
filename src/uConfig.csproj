@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<AssemblyVersion>1.0.2</AssemblyVersion>
+		<AssemblyVersion>1.0.3</AssemblyVersion>
 		<Company>Falcon Technologies</Company>
 		<Authors>Sergey Golovenchik</Authors>
 		<PackageId>uConfig</PackageId>

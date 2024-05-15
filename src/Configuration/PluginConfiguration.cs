@@ -31,7 +31,7 @@ internal class PluginConfiguration
 	/// <param name="key">Configuration key</param>
 	internal bool KeySelected(string key)
 	{
-		return this.Selected.Count() == 0 || this.Selected.Any(s => new Regex(s).IsMatch(key));
+		return this.Selected.Count() == 0 || this.Selected.Any(s => new Regex(s, RegexOptions.IgnoreCase).IsMatch(key));
 	}
 
 	/// <summary>
@@ -40,7 +40,7 @@ internal class PluginConfiguration
 	/// <param name="key">Configuration key</param>
 	internal bool KeyExcluded(string key)
 	{
-		return this.Excluded.Any(e => new Regex(e).IsMatch(key));
+		return this.Excluded.Any(e => new Regex(e, RegexOptions.IgnoreCase).IsMatch(key));
 	}
 
 	/// <summary>
@@ -49,7 +49,7 @@ internal class PluginConfiguration
 	/// <param name="key">Configuration key</param>
 	internal bool KeyProtected(string key)
 	{
-		return this.Protected.Any(p => new Regex(p).IsMatch(key));
+		return this.Protected.Any(p => new Regex(p, RegexOptions.IgnoreCase).IsMatch(key));
 	}
 
 	/// <summary>
@@ -58,7 +58,7 @@ internal class PluginConfiguration
 	/// <param name="key">Configuration key</param>
 	internal bool KeyReadonly(string key)
 	{
-		return this.Readonly.Any(r => new Regex(r).IsMatch(key));
+		return this.Readonly.Any(r => new Regex(r, RegexOptions.IgnoreCase).IsMatch(key));
 	}
 
 	/// <summary>
