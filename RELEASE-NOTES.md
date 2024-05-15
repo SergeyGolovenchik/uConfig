@@ -1,3 +1,7 @@
+### 1.0.3
+
+- Case ignorance added to Regex filters in order to support Umbraco Cloud
+
 ### 1.0.2
 
 - Sql Providers names updated in order to support Umbraco Cloud
